@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>RS CDN Translator</title>
+  <meta name="description" content="RS CDN Translator">
+  <meta name="author" content="Buddy Reno">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <div class="SiteWrapper">
+    <h1>RS CDN Translator</h1>
+
+    <div class="wrapper">
+      <textarea id="DirectoryInput" class="directoryInput" name="textarea" rows="10" cols="50"></textarea>
+      <button id="CalculateLinks" class="Button">Create CDN Links</button>
+    </div>
+
+    <div class="wrapper Results">
+      <button data-hidden data-clipboard-target=".LinkList" id="Copy" class="Button">Copy To Clipboard</button>
+      <p class="LinkList">
+      </p>
+      <span data-hidden class="msg msg--success">Copied!</span>
+      <span data-hidden class="msg msg--failure">Press CMD+C to copy</span>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="./node_modules/clipboard/dist/clipboard.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>

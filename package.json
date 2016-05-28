@@ -1,0 +1,29 @@
+{
+  "name": "rs-cdn-translator",
+  "version": "0.0.1",
+  "description": "Translate directories from the RS CDN into fully qualified CDN links.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass ./assets/scss/styles.scss ./assets/css/styles.css && postcss --use autoprefixer --autoprefixer.browsers \"last 2 versions\" -o ./assets/css/styles.css ./assets/css/styles.css",
+    "watch": "./bin/watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuddyLReno/rs-cdn-translator.git"
+  },
+  "author": "Buddy Reno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BuddyLReno/rs-cdn-translator/issues"
+  },
+  "homepage": "https://github.com/BuddyLReno/rs-cdn-translator#readme",
+  "devDependencies": {
+    "node-sass": "^3.7.0",
+    "nodemon": "^1.9.2",
+    "normalize.css": "^4.1.1"
+  },
+  "dependencies": {
+    "clipboard": "^1.5.10"
+  }
+}

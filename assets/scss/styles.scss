@@ -1,0 +1,135 @@
+@import "scut";
+@import "../../node_modules/normalize.css/normalize";
+
+//
+// Make media elements responsive
+// http://fluidity.sexy
+//
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+}
+
+//
+// Miscellaneous
+// http://davidtheclark.github.io/scut/reset.html
+//
+
+// Make everything a border-box
+@include scut-reset-border-box;
+
+// Make <img> and <video> elements fluid-by-default
+@include scut-reset-media;
+
+// Give clickable elements cursor: pointer
+@include scut-reset-pointer;
+
+.SiteWrapper {
+  max-width: scut-rem(1200);
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.wrapper {
+  @include scut-clearfix;
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.directoryInput {
+  width: 100%;
+  min-height: scut-rem(300);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.Button {
+  display: block;
+  float: left;
+  border: scut-rem(1) solid #004477;
+  color: #EEEFF2;
+  background-color: #004477;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    background-color: #EEEFF2;
+    color: #004477;
+  }
+
+  &[data-hidden] {
+    display: none;
+  }
+}
+
+.LinkList {
+  text-align: left;
+  margin: 0 auto;
+  list-style: none;
+  padding: 4rem 0;
+
+  li {
+    padding: 0.5rem 0;
+  }
+}
+
+.Results {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.msg {
+  position: absolute;
+  background-color: black;
+  padding: 0.55rem 0.5rem;
+  border-radius: 0 scut-rem(5) scut-rem(5) 0;
+  color: white;
+  top: 4.5rem;
+  left: 14rem;
+
+  &[data-hidden] {
+    display: none;
+  }
+  &:not([data-hidden]) {
+    animation-name: flash;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    border-top: scut-rem(18) solid transparent;
+    border-bottom: scut-rem(18) solid transparent;
+    border-right:scut-rem(18) solid black;
+    left: scut-rem(-18);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--success {
+    background-color: #8DC241;
+
+    &:before {
+      border-right-color: #8DC241;
+    }
+  }
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
