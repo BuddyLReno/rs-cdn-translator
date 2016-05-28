@@ -1,30 +1,27 @@
 (function($, undefined) {
   var $input = $("#DirectoryInput");
   var $btnCalculate = $("#CalculateLinks");
-  var $LinkList = $(".LinkList");
+  var $LinkList = $("#LinkList");
   var $btnCopy = $("#Copy");
   var $msgs = $(".msg");
 
-  var clipboard = new Clipboard('#Copy', function() {
-    var copyValue = "";
-    resetMessages();
-    $.each($LinkList.children(), {
-      text: function(index, item) {
-              copyValue.concat($(item).text(), "\r\n");
-            }
-    });
+  // var clipboard = new Clipboard('#Copy', function() {
+  //   var copyValue = "";
+  //   resetMessages();
+  //   $.each($LinkList.children(), {
+  //     text: function(index, item) {
+  //             copyValue.concat($(item).text(), "\r\n");
+  //           }
+  //   });
+  //
+  //   return copyValue;
+  // });
 
-    return copyValue;
-  });
+  var clipboard = new Clipboard('#Copy');
 
   clipboard.on('success', function(e) {
     $msgs.filter(".msg--success").removeAttr("data-hidden");
     window.setTimeout(resetMessages, 3000);
-  });
-
-  clipboard.on("error", function(e) {
-    console.error('Action:', e.action);
-    console.error('Trigger:', e.trigger);
   });
 
   $btnCalculate.on("click.createLinks", function(e) {
@@ -63,14 +60,18 @@
   }
 
   function displayLinks(links) {
-    var linkTemplate = "<a target=\"_blank\" href=\"{{link}}\">{{link}}</a><br/>";
+    // var linkTemplate = "<a target=\"_blank\" href=\"{{link}}\">{{link}}</a><br/>";
+    var compiledResult = "";
     $btnCopy.removeAttr("data-hidden");
     resetMessages();
-    $LinkList.empty();
+    $LinkList.val("");
 
     $.each(links, function(i, link) {
-      $LinkList.append(linkTemplate.replace(/{{link}}/gi, link));
+      // $LinkList.append(link);
+      compiledResult += link + "\r\n";
     });
+
+    $LinkList.val(compiledResult);
   }
 
   function resetMessages() {

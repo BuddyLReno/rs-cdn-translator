@@ -401,18 +401,24 @@ button {
   margin: 2rem auto;
   text-align: center; }
 
+.flexy {
+  display: -ms-flexbox;
+  display: flex; }
+
 .wrapper {
-  max-width: 75%;
-  margin: 0 auto; }
+  width: 75%;
+  margin: 0 auto;
+  -ms-flex: 0 1 45%;
+      flex: 0 1 45%; }
   .wrapper:after {
     content: "";
     display: table;
     clear: both; }
 
-.directoryInput {
+.textarea {
   width: 100%;
-  min-height: 18.75rem;
-  display: inline-block;
+  min-height: 15.625rem;
+  display: block;
   margin-bottom: 1rem; }
 
 .Button {
@@ -430,16 +436,7 @@ button {
   .Button[data-hidden] {
     display: none; }
 
-.LinkList {
-  text-align: left;
-  margin: 0 auto;
-  list-style: none;
-  padding: 4rem 0; }
-  .LinkList li {
-    padding: 0.5rem 0; }
-
 .Results {
-  padding: 4rem 0;
   position: relative; }
 
 .msg {
@@ -448,7 +445,7 @@ button {
   padding: 0.55rem 0.5rem;
   border-radius: 0 0.3125rem 0.3125rem 0;
   color: white;
-  top: 4.5rem;
+  bottom: 0.5rem;
   left: 14rem; }
   .msg[data-hidden] {
     display: none; }

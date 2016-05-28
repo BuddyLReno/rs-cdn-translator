@@ -18,17 +18,18 @@
       <br/>CDN Translator
     </h1>
 
-    <div class="wrapper">
-      <textarea id="DirectoryInput" class="directoryInput" name="textarea" rows="10" cols="50"></textarea>
-      <button id="CalculateLinks" class="Button">Create CDN Links</button>
-    </div>
+    <div class="flexy">
+      <div class="wrapper">
+        <textarea id="DirectoryInput" class="textarea" name="textarea" rows="10"></textarea>
+        <button id="CalculateLinks" class="Button">Create CDN Links</button>
+      </div>
 
-    <div class="wrapper Results">
-      <button data-hidden data-clipboard-target=".LinkList" id="Copy" class="Button">Copy To Clipboard</button>
-      <p class="LinkList">
-      </p>
-      <span data-hidden class="msg msg--success">Copied!</span>
-      <span data-hidden class="msg msg--failure">Press CMD+C to copy</span>
+      <div class="wrapper Results">
+        <textarea id="LinkList" class="textarea" name="textarea" rows="10"></textarea>
+        <button data-clipboard-target="#LinkList" id="Copy" class="Button">Copy To Clipboard</button>
+        <span data-hidden class="msg msg--success">Copied!</span>
+        <span data-hidden class="msg msg--failure">Press CMD+C to copy</span>
+      </div>
     </div>
 
   </div>

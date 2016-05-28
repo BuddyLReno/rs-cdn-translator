@@ -35,16 +35,21 @@ textarea {
   text-align: center;
 }
 
-.wrapper {
-  @include scut-clearfix;
-  max-width: 75%;
-  margin: 0 auto;
+.flexy {
+  display: flex;
 }
 
-.directoryInput {
+.wrapper {
+  @include scut-clearfix;
+  width: 75%;
+  margin: 0 auto;
+  flex: 0 1 45%;
+}
+
+.textarea {
   width: 100%;
-  min-height: scut-rem(300);
-  display: inline-block;
+  min-height: scut-rem(250);
+  display: block;
   margin-bottom: 1rem;
 }
 
@@ -68,19 +73,7 @@ textarea {
   }
 }
 
-.LinkList {
-  text-align: left;
-  margin: 0 auto;
-  list-style: none;
-  padding: 4rem 0;
-
-  li {
-    padding: 0.5rem 0;
-  }
-}
-
 .Results {
-  padding: 4rem 0;
   position: relative;
 }
 
@@ -90,7 +83,7 @@ textarea {
   padding: 0.55rem 0.5rem;
   border-radius: 0 scut-rem(5) scut-rem(5) 0;
   color: white;
-  top: 4.5rem;
+  bottom: 0.5rem;
   left: 14rem;
 
   &[data-hidden] {

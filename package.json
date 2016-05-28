@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node-sass ./assets/scss/styles.scss ./assets/css/styles.css && postcss --use autoprefixer --autoprefixer.browsers \"last 2 versions\" -o ./assets/css/styles.css ./assets/css/styles.css",
-    "watch": "./bin/watch"
+    "watch": "./bin/watch",
+    "serve": "browser-sync start --server"
   },
   "repository": {
     "type": "git",
